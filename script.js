@@ -77,6 +77,7 @@ function handleMove(evt) {
             console.log("speed0: " + speed0);
             console.log("speed1: " + speed1);
             canvas.width = canvas.width;
+            ctx.font = '48px serif';
             ctx.fillText(speed0, 10, 50);
             ctx.fillText(speed1, 10, 150);
             /*if (speed0 > 5) {
