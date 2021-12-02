@@ -17,8 +17,8 @@ window.onresize = () => {
 }
 
 var ongoingTouches = [];
+var speed0 = 0;
 var speed1 = 0;
-var speed2 = 0;
 
 function init() {
     var ctx = canvas.getContext("2d");
@@ -74,7 +74,8 @@ function handleMove(evt) {
                 speed1 = Math.floor(100 * (touches[i].pageX - ongoingTouches[idx].pageX) / 20);
             }
 
-            console.log("speed: " + speed);
+            console.log("speed0: " + speed0);
+            console.log("speed1: " + speed1);
             canvas.width = canvas.width;
             if (speed0 > 5) {
                 ctx.font = '48px serif';
@@ -84,10 +85,10 @@ function handleMove(evt) {
                 ctx.fillText('left', 10, 50);
             } else if (speed1 > 5) {
                 ctx.font = '48px serif';
-                ctx.fillText('right', 10, 100);
+                ctx.fillText('right', 10, 150);
             } else if (speed1 < -5) {
                 ctx.font = '48px serif';
-                ctx.fillText('left', 10, 100);
+                ctx.fillText('left', 10, 150);
             } else {
                 ctx.font = '48px serif';
 
@@ -114,8 +115,13 @@ function handleEnd(evt) {
     for (var i = 0; i < touches.length; i++) {
         var color = colorForTouch(touches[i]);
         var idx = ongoingTouchIndexById(touches[i].identifier);
-
         if (idx >= 0) {
+            if (idx === 0) {
+                speed0 = 0;
+            }
+            if (idx === 1) {
+                speed1 = 0;
+            }
             ctx.lineWidth = 4;
             ctx.fillStyle = color;
             //ctx.beginPath();
