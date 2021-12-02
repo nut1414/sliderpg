@@ -77,7 +77,9 @@ function handleMove(evt) {
             console.log("speed0: " + speed0);
             console.log("speed1: " + speed1);
             canvas.width = canvas.width;
-            if (speed0 > 5) {
+            ctx.fillText(speed0, 10, 50);
+            ctx.fillText(speed1, 10, 150);
+            /*if (speed0 > 5) {
                 ctx.font = '48px serif';
                 ctx.fillText('right', 10, 50);
             } else if (speed0 < -5) {
@@ -90,7 +92,7 @@ function handleMove(evt) {
             } else if (speed1 < -5) {
                 ctx.font = '48px serif';
                 ctx.fillText('left', 10, 150);
-            }
+            }*/
 
             ongoingTouches.splice(idx, 1, copyTouch(touches[i])); // swap in the new touch record
             console.log(".");
