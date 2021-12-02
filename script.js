@@ -141,6 +141,12 @@ function handleCancel(evt) {
     var touches = evt.changedTouches;
     canvas.width = canvas.width;
     for (var i = 0; i < touches.length; i++) {
+        if (idx === 0) {
+            speed0 = 0;
+        }
+        if (idx === 1) {
+            speed1 = 0;
+        }
         var idx = ongoingTouchIndexById(touches[i].identifier);
         ongoingTouches.splice(idx, 1); // remove it; we're done
     }
