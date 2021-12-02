@@ -83,16 +83,13 @@ function handleMove(evt) {
             } else if (speed0 < -5) {
                 ctx.font = '48px serif';
                 ctx.fillText('left', 10, 50);
-            } else if (speed1 > 5) {
+            }
+            if (speed1 > 5) {
                 ctx.font = '48px serif';
                 ctx.fillText('right', 10, 150);
             } else if (speed1 < -5) {
                 ctx.font = '48px serif';
                 ctx.fillText('left', 10, 150);
-            } else {
-                ctx.font = '48px serif';
-
-                //ctx.fillText('none', 10, 50);
             }
 
             ongoingTouches.splice(idx, 1, copyTouch(touches[i])); // swap in the new touch record
