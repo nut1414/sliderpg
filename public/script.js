@@ -1,11 +1,10 @@
-var txt = ""
-txt += "<p>innerWidth: " + window.innerWidth + "</p>"
-txt += "<p>innerHeight: " + window.innerHeight + "</p>"
-txt += "<p>outerWidth: " + window.outerWidth + "</p>"
-txt += "<p>outerHeight: " + window.outerHeight + "</p>"
 var canvas = document.getElementById("canvas")
 var ctx = canvas.getContext("2d")
 var websocket = new WebSocket('ws://' + window.location.host + '/ws')
+
+var ongoingTouches = []
+var speed0 = 0
+var speed1 = 0
 
 websocket.onopen = function () {
   canvas.addEventListener('touchstart', handleStart, false)
@@ -23,14 +22,11 @@ websocket.onclose = function () {
   ctx.fillText('connection lost, please reload the page.', 10 - 400 + window.innerWidth/2, window.innerHeight/2)
 }
 
-window.onresize = () => {
+window.onresize = function () {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 }
 
-var ongoingTouches = []
-var speed0 = 0
-var speed1 = 0
 
 function sendSpeed(spd0,spd1) {
   websocket.send(spd0+','+spd1)
