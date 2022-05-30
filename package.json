@@ -1,0 +1,25 @@
+{
+  "name": "sliderpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nut1414/sliderpg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nut1414/sliderpg/issues"
+  },
+  "homepage": "https://github.com/nut1414/sliderpg#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-ws": "^5.0.2",
+    "vigemclient": "^1.4.1"
+  }
+}
