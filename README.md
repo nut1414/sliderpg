@@ -15,3 +15,4 @@ npm install
 
 node index.js
 ```
+ 4. Open web browser from your device and enter ```[YOUR PC LOCAL IP]:8080``` 
