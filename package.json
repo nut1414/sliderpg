@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/nut1414/sliderpg.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "nut1414",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nut1414/sliderpg/issues"
   },
